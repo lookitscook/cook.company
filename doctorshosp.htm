@@ -38,21 +38,48 @@
    background-repeat:no-repeat;
    background-position: 50% 35px;
    background-size:40%;
+   position:absolute;
+   top:0;
+   left:0;
    }
    ul, li, li > a{
    display: block;
    }
+   ul{
+     position:absolute;
+     top:80px;
+     left:0;
+     width:1920px;
+     height:1000px;
+   }
    li{
-   float: left;
-   width: 360px; /* 1920px / 3 */
+   position:absolute;
+   width: 360px;
    height: 360px;
-   margin: 100px 140px 0 140px;
    background: #f6f2e8;
+   transform: translateY(-50%) translateX(-50%);
    border-radius:240px;
    text-align:center;
    box-shadow: 5px 5px 20px rgba(0,0,0,0.35);
    cursor: pointer;
    }
+   li.top{
+     top: 240px;
+   }
+   li.bottom{
+     bottom: -80px;
+   }
+   li.left{
+     left: 460px;
+   }
+   li.right{
+     right: 100px;
+   }
+   li.center{
+     top: 50%;
+     left: 50%;
+   }
+  
    li > a{
    position: relative;
    top: 50%;
@@ -107,12 +134,11 @@
   <body>
     <div id="container">
       <ul id="buttons">
-        <li><a href="#" data-src="https://docs.google.com/forms/d/e/1FAIpQLSe6guGcaqgVjqxkB-QzfNxnflC2KjCtkImUw8BotsysznHL8g/viewform">Patient <br> Check-In</a></li>
-        <li><a href="#" data-src="https://portal.doctorshosp.com/">Patient Portal</a></li>
-        <li><a href="#" data-src="https://payment-doctorshosp.netlify.com/">Payments</a></li>
-        <li><a href="#" data-src="https://player.vimeo.com/video/327965531?background=1">Guest Wifi</a></li>
-        <li><a href="#" data-src="https://docs.google.com/forms/d/e/1FAIpQLSfuKFp8Q9XrpvTJicn7mR8D7tAlcRkMfY8llNG8DHW0GsIbCA/viewform">Complaints & Grievences</a></li>
-        <li><a href="#" data-src="https://www.cvent.com/surveys/Welcome.aspx?s=f63d9324-93e0-447e-bb4c-b52326caf876">Patient Satisfaction Survey</a></li>
+        <li class="top left"><a href="#" data-src="https://docs.google.com/forms/d/e/1FAIpQLSe6guGcaqgVjqxkB-QzfNxnflC2KjCtkImUw8BotsysznHL8g/viewform">Patient <br> Check-In</a></li>
+        <li class="top right"><a href="#" data-src="https://payment-doctorshosp.netlify.com/">Payments</a></li>
+        <li class="center"><a href="#" data-src="https://player.vimeo.com/video/327965531?background=1">Guest Wifi</a></li>
+        <li class="bottom left"><a href="#" data-src="https://docs.google.com/forms/d/e/1FAIpQLSfuKFp8Q9XrpvTJicn7mR8D7tAlcRkMfY8llNG8DHW0GsIbCA/viewform">Complaints & Grievences</a></li>
+        <li class="bottom right"><a href="#" data-src="https://www.cvent.com/surveys/Welcome.aspx?s=f63d9324-93e0-447e-bb4c-b52326caf876">Patient Satisfaction Survey</a></li>
       </ul>
       <div id="content" class="hidden">
         <iframe></iframe>
